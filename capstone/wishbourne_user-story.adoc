@@ -1,0 +1,110 @@
+= WISHBOURNE USER STORY
+
+== Abstract
+Request making platform where users create crowdfunding campaigns to challenge or offer bounties to content creators.
+
+== Screens
+
+=== Global
+
+==== Dashboard
+List of campaigns as cards with brief info of the request, the celebrity, campaign state and status.
+Search bar where campaigns and users can be listed
+Wallet adaptor/component at top right
+
+==== Notifications Modal/Sidebar
+Messages about every state change related to affilliated campaigns. Each msg leads to its own campaign view
+
+==== Campaign Overview
+Visitors can view the full details of the campaign and contribute if they want to
+
+. Campaign State
+. Celeb info
+. Description
+. Summary
+. Tags/Categories
+. Collected amount
+. Goal (if set)
+. Advance ratio (if set)
+. Content link (if fulfilled)
+
+
+=== Users' Perspective
+
+==== Campaign Creation Form
+. To
+. Description
+. Summary
+. Tags/Categories
+. Amount
+
+=== Celeb's Perspective
+
+==== Campaign Approval Form
+. Goal
+. Advance ratio (Optional)
+. Collaborators (Optional)
+. Approve/Reject
+. Reason (Optional)
+
+==== Celeb's Campaign View
+Celeb can edit, cancel or fulfill the campaign
+
+. Edit Goal
+. Edit advance ratio
+. Edit Collaborators
+. Transfer Ownership (if collaborators are set)
+. Edit state (Terminate, Start, Fulfill)
+
+=== Admin
+
+==== Reported Campaigns
+List of campaigns that are reported, the results are aggregated , sorted by severity and report count
+
+==== Admin's Campaign View
+Admin can make edits to correct minor issues/offenses or terminate the campaign
+
+== Narration
+
+=== User
+
+==== First Entry
+The user is greeted with the main screen where the existing campaigns are listed by popularity. Each campaign is displayed as a card with summary, status and collected amount as progress bar.
+On top right there is the wallet adaptor component. Once the wallet is connected, the user can click create campaign button or the profile link. The existing campaigns are always viewable but contribution is only possible after wallet connection.
+There is also the notifications modal button globally available where the user can keep track of any event related to the affiliated campaigns.
+
+==== New Campaign
+The user provides the celebrity public key, description (what he wants from the celeb/CC), summary of this request (V2, AI will provide this field) and the amount (min 1 USDC).
+Once the form is submitted the designated amount is transferred to the user's personal donation account which is created for this campaign. 
+Now this newly created campaign is in PENDING state and the user has to wait for the celeb's approval. Once the celeb (requestee) sees this campaign, she can set the campaign's state to APPROVED, along with the campaign goal (how much USDC should be collected). The user can keep track of these events through the notifications panel or his own profile page.
+
+
+==== Contributing to an Existing Campaign
+This is the overview of a campaign that was created by another. The campaign details are displayed, along with contribute button. The user can 
+
+==== Profile Page
+In the upper half of the screen: the user can track his statistics and fidelity points (V2, fidelity is earned by providing the minimum amount to the fulfilled campaign, aka not bailing out during the actual payday)
+In the lower half: user can view created/contributed campaigns or the requests that are made to him.
+
+==== Notifications
+This slidebar/modal keeps track of the state changes related to the affiliated campaigns, which will lead to that campaign's view once clicked. 
+
+==== Campaign View
+This screen will be the same as with contribute view except the available actions, since it will change depending on the campaign state.
+If this campaign is fulfilled, the user will see the content link (or embedded video/audio), along with commit and withdraw buttons.
+By committing, the user can finally transfer the funds from his campaign vault to the celeb's wallet. During this process, the user can also evaluate the content (0-5 stars)
+
+=== Celebrity
+
+==== Profile - Requestee Tab
+The Celeb keeps track of any requests (new campaigns) that are created in her name, which can be sorted/filtered by campaign state and progress.
+
+==== Campaign Approval Form
+The celeb will be led to this page when a campaign with PENDING state is clicked in the requestee tab. After setting up the goal, she can set the campaign's state to APPROVED. 
+The celeb can also reject this campaign. This action will set the campaign's state to TERMINATED and all of PDA's that are related to this campaign will be closed.
+
+== Source
+https://github.com/Web3-Builders-Alliance/EfecanKutluk_Sol_2Q24/blob/master/wishbourne_user-stories.adoc
+
+
+
